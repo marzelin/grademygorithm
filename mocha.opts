@@ -1,0 +1,3 @@
+--recursive
+--require ./mocha-require.js
+./js/test

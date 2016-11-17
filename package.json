@@ -1,0 +1,33 @@
+{
+  "private": true,
+  "main": "js/index.js",
+  "scripts": {
+    "start": "node js/index.js",
+    "build": "tsc",
+    "test": "mocha --opts ./mocha.opts",
+    "test:coverage": "istanbul cover -x *.test.js -x mocha-require.js _mocha -- --opts ./mocha.opts",
+    "test:watch": "yarn run test -- --watch"
+  },
+  "name": "grademygorithm",
+  "version": "0.1.0",
+  "author": "marzelin <marzelin@gmail.com>",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@types/chai": "^3.4.34",
+    "@types/chai-as-promised": "^0.0.29",
+    "@types/mocha": "^2.2.33",
+    "@types/node": "^6.0.48",
+    "@types/sinon": "^1.16.32",
+    "@types/sinon-chai": "^2.7.27",
+    "@types/supertest": "^1.1.31",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.1.2",
+    "sinon": "^1.17.6",
+    "sinon-chai": "^2.8.0",
+    "supertest": "^2.0.1",
+    "tslint": "^3.15.1",
+    "typescript": "^2.0.10"
+  }
+}
