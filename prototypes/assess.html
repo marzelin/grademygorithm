@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grade My Gorithms</title>
+</head>
+<body>
+  <nav class="main-nav">
+    <div class="main-nav__logo"><a href="/prototypes/index.html">GradeMyGorithms</a></div>
+    <ul class="main-nav__links">
+      <li class="main-nav__link">About</li>
+      <li class="main-nav__link">Add</li>
+      <li class="main-nav__link">Grade</li>
+      <li class="main-nav__link"><a href="/prototypes/index.html">Sign out</a></li>
+    </ul>
+  </nav>
+  <div class="assessment">
+    <h1 class="assessment__title">Grade Solution</h1>
+    <h2 class="assessment__challenge-title">Find the Longest Word in a String</h2>
+    <pre class="assessment__codeblock">
+function findLongestWord(str) {
+  var words = str.split(' ');
+  var longest = words.reduce(function(prev, cur){
+    if(cur.length>prev.length){ return cur;} else {return prev;}
+  });
+  return longest.length;
+}
+
+findLongestWord('The quick brown fox jumped over the lazy dog');
+    </pre>
+    <div class="assessment__categories">
+      <h2 class="categories__title">Rate it</h2>
+      <p class="assessment__category-title">clarity:
+        <span class="grade-group">
+          <span class="assessment__grade">1</span>
+          <span class="assessment__grade">2</span>
+          <span class="assessment__grade">3</span>
+          <span class="assessment__grade">4</span>
+          <span class="assessment__grade">5</span>
+        </span>
+      </p>
+      <p class="assessment__category-title">performance:
+        <span class="grade-group">
+          <span class="assessment__grade">1</span>
+          <span class="assessment__grade">2</span>
+          <span class="assessment__grade">3</span>
+          <span class="assessment__grade">4</span>
+          <span class="assessment__grade">5</span>
+        </span>
+      </p>
+      <p class="assessment__category-title">simplicity:
+        <span class="grade-group">
+          <span class="assessment__grade">1</span>
+          <span class="assessment__grade">2</span>
+          <span class="assessment__grade">3</span>
+          <span class="assessment__grade">4</span>
+          <span class="assessment__grade">5</span>
+        </span>
+      </p>
+      <p class="assessment__category-title">variable naming:
+        <span class="grade-group">
+          <span class="assessment__grade">1</span>
+          <span class="assessment__grade">2</span>
+          <span class="assessment__grade">3</span>
+          <span class="assessment__grade">4</span>
+          <span class="assessment__grade">5</span>
+        </span>
+      </p>
+      <p class="assessment__category-title">ingenuity:
+        <span class="grade-group">
+          <span class="assessment__grade">1</span>
+          <span class="assessment__grade">2</span>
+          <span class="assessment__grade">3</span>
+          <span class="assessment__grade">4</span>
+          <span class="assessment__grade">5</span>
+        </span>
+      </p>
+    </div>
+    <div class="endorsement">
+      <h2 class="endorsements__title">What do you like about this solution?</h2>
+      <textarea
+        class="assessment__notes"
+        cols="35"
+        rows="4"></textarea>
+    </div>
+    <div class="improvements">
+      <h2 class="improvements__title">How this code can be improved?</h2>
+      <textarea
+        class="assessment__notes"
+        cols="35"
+        rows="4"></textarea>
+    </div>
+    <button class="assessment__submit-btn"><a href="/prototypes/main-menu.html">Submit</a>
+    </button>
+  </div>
+</body>
+</html>

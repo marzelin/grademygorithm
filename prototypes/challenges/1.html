@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grade My Gorithms</title>
+</head>
+<body>
+  <nav class="main-nav">
+    <div class="main-nav__logo"><a href="/prototypes/index.html">GradeMyGorithms</a></div>
+    <ul class="main-nav__links">
+      <li class="main-nav__link">About</li>
+      <li class="main-nav__link">Add</li>
+      <li class="main-nav__link">Grade</li>
+      <li class="main-nav__link"><a href="/prototypes/index.html">Sign out</a></li>
+    </ul>
+  </nav>
+  <div class="challenge">
+    <h1 class="challenge__title">Find the Longest Word in a String</h1>
+    <pre class="challenge__codeblock">
+function findLongestWord(str) {
+  var words = str.split(' ');
+  var longest = words.reduce(function(prev, cur){
+    if(cur.length>prev.length){ return cur;} else {return prev;}
+  });
+  return longest.length;
+}
+
+findLongestWord('The quick brown fox jumped over the lazy dog');
+    </pre>
+    <div class="challenge__grades">
+      <h2 class="challenge__grades-title">Grades</h2>
+      <p class="challenge__category">clarity: <span class="challenge__grade">4</span>
+      <p class="challenge__category">performance: <span class="challenge__grade">5</span>
+      <p class="challenge__category">simplicity: <span class="challenge__grade">4</span>
+      <p class="challenge__category">variable naming: <span class="challenge__grade">5</span>
+      <p class="challenge__category">ingenuity: <span class="challenge__grade">4</span>
+    </div>
+    <div class="endorsements">
+      <h2 class="endorsements__title">Endorsements</h2>
+      <p class="endorsement">Meaningful variable names.</p>
+      <p class="endorsement">Pretty succinct.</p>
+      <p class="endorsement">Nice use of reduce.</p>
+    </div>
+    <div class="improvements">
+      <h2 class="improvements__title">Improvement ideas</h2>
+      <p class="improvements__idea">Arrow functions would simplify code.</p>
+      <p class="improvements__idea">You could use ternary operator to make code more concise.</p>
+      <p class="improvements__idea">It's not a good idea to put if...else on one line</p>
+    </div>
+  </div>
+</body>
+</html>

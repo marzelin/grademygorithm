@@ -2,8 +2,10 @@
   "private": true,
   "main": "js/index.js",
   "scripts": {
+    "serve": "webpack-dev-server",
     "start": "node js/index.js",
     "build": "tsc",
+    "bundle": "webpack",
     "test": "mocha --opts ./mocha.opts",
     "test:coverage": "istanbul cover -x *.test.js -x mocha-require.js _mocha -- --opts ./mocha.opts",
     "test:watch": "yarn run test -- --watch"
@@ -22,12 +24,19 @@
     "@types/supertest": "^1.1.31",
     "chai": "^3.5.0",
     "chai-as-promised": "^6.0.0",
+    "css-loader": "^0.25.0",
+    "html-webpack-plugin": "^2.24.1",
     "istanbul": "^0.4.5",
     "mocha": "^3.1.2",
     "sinon": "^1.17.6",
     "sinon-chai": "^2.8.0",
+    "style-loader": "^0.13.1",
     "supertest": "^2.0.1",
+    "surge": "^0.18.0",
     "tslint": "^3.15.1",
-    "typescript": "^2.0.10"
+    "typescript": "^2.0.10",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2",
+    "webpack-validator": "^2.2.9"
   }
 }

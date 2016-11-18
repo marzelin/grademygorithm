@@ -1,0 +1,195 @@
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  background-color: #eee;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.main-nav {
+  position: fixed;
+  top:0;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  background-color: rgb(0,100,0);
+  padding: 0.5rem; 
+  color: #fff;
+}
+
+.main-nav__logo {
+  padding: 0 0.5rem;
+  margin-right: auto;
+  font-size: 1.5rem;
+}
+
+.main-nav__links {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .main-nav__links {
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+  }
+
+  .main-nav__link {
+    padding: 0.5rem;
+  }
+}
+
+.hero {
+  padding: 0 0.5rem;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+@media (min-width: 600px) {
+  .hero {
+    padding-bottom: 200px;
+  }
+}
+
+.hero__logo {
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+  padding: 5px;
+  border-radius: 100%;
+  font-size: 2rem;
+  line-height: 80px;
+  font-weight: 800;
+  color: white;
+  background-color: rgb(0, 100, 0);
+}
+
+.hero__title {
+  font-size: 3rem;
+}
+
+.hero__description {
+  font-size: 1.5rem;
+}
+
+.hero__button {
+  background-color: #ffac33;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-right: 1.5rem;
+  border: none;
+  border-radius: 3px;
+  font-size: 2rem;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.algorithm-submission__selection {
+  display: block;
+}
+
+.algorithm-submission__codeblock {
+  display: block;
+  background-color: #000;
+  color: #fff;
+}
+
+.algorithm-submission__notes {
+  display: block;
+}
+
+.grades {
+  margin: 0 0.5rem;
+  margin-top: 4rem;
+}
+
+.grades__challenge--active {
+  color: seagreen;
+}
+
+.grades__challenge--active:hover {
+  text-decoration: underline;
+}
+
+.grades__grade {
+  color: #fff;
+  font-weight: 800;
+  padding: .1rem .4rem;  
+  background-color: rgb(0,100,0);
+  border-radius: 50%;
+}
+
+/* copy of .grades */
+.challenge {
+  margin: 0 0.5rem;
+  margin-top: 4rem;
+}
+
+/* copy of .algorithm-submission__codeblock */
+.challenge__codeblock {
+  display: block;
+  background-color: #000;
+  color: #fff;
+  white-space: pre-wrap;
+  padding: 0.5rem;
+}
+
+/* copy of .grades__grade*/
+.challenge__grade {
+  color: #fff;
+  font-weight: 800;
+  padding: .1rem .4rem;  
+  background-color: rgb(0,100,0);
+  border-radius: 50%;
+}
+
+/* copy of .grades */
+.assessment {
+  margin: 0 0.5rem;
+  margin-top: 4rem;
+}
+
+/* copy of .algorithm-submission__codeblock */
+.assessment__codeblock {
+  display: block;
+  background-color: #000;
+  color: #fff;
+  white-space: pre-wrap;
+  padding: 0.5rem;
+}
+
+.assessment__grade {
+  color: rgb(0,100,0);
+  font-weight: 800;
+  padding: .1rem .4rem;  
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.assessment__grade:hover {
+  cursor: pointer;
+  color: #fff;
+  font-weight: 800;
+  padding: .1rem .4rem;  
+  background-color: rgb(0,100,0);
+  border-radius: 50%;
+}
+
+/* copy of .algorithm-submission__notes */
+.assessment__notes {
+  display: block;
+}
