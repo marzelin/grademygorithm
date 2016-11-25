@@ -13,7 +13,9 @@ var config = {
   },
   module: {
     loaders: [
-      {test: /\.css$/, loaders: ['style', 'css']}
+      {test: /\.css$/, loaders: ['style',
+        'css?modules&importLoaders=1&localIdentName=[local]',
+        'postcss']}
     ]
   },
   plugins: [
