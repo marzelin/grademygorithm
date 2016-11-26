@@ -43,14 +43,28 @@ class Solutions extends React.PureComponent<PropTypes, StateTypes> {
   render() {
     return (
       <div className="grades">
-        <h1>Solutions New Graded</h1>
-        { this.state.newGraded.map((s) => <Link key={s.challengeNo} to={`/solution/${s.solutionId}`}>{s.challengeNo}. {s.challengeName}</Link>)}
-        <h1>Solutions Old Graded</h1>
-        { this.state.oldGraded.map((s) => <Link key={s.challengeNo} to={`/solution/${s.solutionId}`}>{s.challengeNo}. {s.challengeName}</Link>)}
-        <h1>Solutions Being Graded</h1>
-        { this.state.gradingInProgress.map((s) => s.challengeName)}
-        <h1>Challenges</h1>
-        {this.state.notSubmitted.map((s) => <p key={s.challengeNo}>{s.challengeNo}. {s.challengeName}</p>)}
+        <h1 className="grades__title">Your grades</h1>
+        <div className="grades__group">
+          <h2 className="grades__group-title">Graded Algorithms</h2>
+          { this.state.newGraded.map((s) => <p key={s.challengeNo} className="grades__challenge--active">
+            <Link to={`/solution/${s.solutionId}`}>{s.challengeNo}. {s.challengeName}<span className="grades__grade">New</span></Link>
+          </p>)}
+          { this.state.oldGraded.map((s) => <p key={s.challengeNo} className="grades__challenge--active">
+            <Link to={`/solution/${s.solutionId}`}>{s.challengeNo}. {s.challengeName}<span className="grades__grade">{s.grade}</span></Link>
+          </p>)}
+        </div>
+        <div className="grades__group">
+          <h2 className="grades__group-title">Algorithms Being Graded</h2>
+          { this.state.gradingInProgress.map((s) => 
+            <p key={s.challengeNo} className="grades__challenge">{s.challengeNo}. {s.challengeName} (Grading Progress: {s.progress}%)</p>
+          )}
+        </div>
+        <div className="grades__group">
+          <h2 className="grades__group-title">Algorithms Not Submitted Yet</h2>
+          { this.state.notSubmitted.map((s) =>
+            <p key={s.challengeNo} className="grades__challenge">{s.challengeNo}. {s.challengeName}</p>
+          )}
+        </div>
       </div>
     )
   }
@@ -71,7 +85,7 @@ class Solutions extends React.PureComponent<PropTypes, StateTypes> {
         const challengeName = challenges[challengeNo]
         if(grade === undefined) {
           const { reviewsNeeded } = solution
-          if (reviewsNeeded > 2) {
+          if (reviewsNeeded < 1) {
             newGraded.push({
               challengeName,
               challengeNo,
