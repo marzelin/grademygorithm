@@ -4,57 +4,72 @@ var validate = require('webpack-validator')
 
 var config = {
   entry: {
-    script: resolve(__dirname, 'js', 'index.js'),
-    prototype: resolve(__dirname, 'js', 'prototype.js')
+    script: resolve(__dirname, 'src', 'scripts', 'index.tsx'),
+    prototype: resolve(__dirname, 'prototypes', 'prototype.ts')
   },
   output: {
     path: resolve(__dirname, 'www'),
-    filename: '[name].js'
+    filename: '[name].js',
+    publicPath: '/'
   },
   module: {
     loaders: [
       {test: /\.css$/, loaders: ['style',
         'css?modules&importLoaders=1&localIdentName=[local]',
-        'postcss']}
+        'postcss']},
+      { test: /\.tsx?$/, loader: 'ts'}
+    ],
+    preLoaders: [
+      { test: /\.jsx?$/, loader: 'source-map' }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
+      template: resolve(__dirname, 'src', 'index.html'),
+      filename: 'index.html',
+      chunks: ['script']
+    }),
+    new HtmlWebpackPlugin({
       filename: 'prototypes/index.html',
       template: 'prototypes/index.html',
-      chunk: 'prototype'
+      chunks: ['prototype']
     }),
     new HtmlWebpackPlugin({
       filename: 'prototypes/main-menu.html',
       template: 'prototypes/main-menu.html',
-      chunk: 'prototype'
+      chunks: ['prototype']
     }),
     new HtmlWebpackPlugin({
       filename: 'prototypes/add-solution.html',
       template: 'prototypes/add-solution.html',
-      chunk: 'prototype'
+      chunks: ['prototype']
     }),
     new HtmlWebpackPlugin({
       filename: 'prototypes/grades.html',
       template: 'prototypes/grades.html',
-      chunk: 'prototype'
+      chunks: ['prototype']
     }),
     new HtmlWebpackPlugin({
       filename: 'prototypes/challenges/1.html',
       template: 'prototypes/challenges/1.html',
-      chunk: 'prototype'
+      chunks: ['prototype']
     }),
     new HtmlWebpackPlugin({
       filename: 'prototypes/assess.html',
       template: 'prototypes/assess.html',
-      chunk: 'prototype'
+      chunks: ['prototype']
     })
   ],
+  resolve: {
+    extensions: ['', '.ts', '.tsx', '.js']
+  },
   devServer: {
     inline: true,
     contentBase: resolve(__dirname, 'www'),
-    stats: 'errors-only'
-  }
+    stats: 'errors-only',
+    historyApiFallback: true
+  },
+  devtool: "source-map"
 }
 
 module.exports = validate(config)
