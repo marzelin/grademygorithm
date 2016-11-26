@@ -39,5 +39,6 @@ export {
   ISolutions,
   ISolution,
   ISolutionsDetails,
+  ISolutionDetails,
   Grade
 }
