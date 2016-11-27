@@ -4,7 +4,9 @@ import { Link } from 'react-router'
 import { ISolution, ISolutionDetails } from '../models'
 import { challenges } from '../challenges'
 
-interface PropTypes {}
+interface PropTypes {
+  router: any
+}
 interface StateTypes {
   reviewedSolutionId?: string | null 
   solution?: ISolutionDetails
@@ -108,6 +110,7 @@ class Review extends React.PureComponent<PropTypes, StateTypes> {
         Math.round((parseInt(clarity) + parseInt(simplicity) + parseInt(ingenuity)) / 3)
       )
       firebase.database().ref('solutionsDetails/' + reviewedSolutionId + '/reviews/' + userId).set({ clarity, simplicity, ingenuity, pros, cons })
+      this.props.router.replace('/')
     }
   } 
 
