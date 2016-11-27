@@ -81,8 +81,8 @@ class Solutions extends React.PureComponent<PropTypes, StateTypes> {
         const solutionId = solutionSnapshot.key as string
         const { grade, challengeId } = solution
         submittedNo.push(challengeId)
+        const challengeName = challenges[challengeId]
         const challengeNo = challengeId + 1
-        const challengeName = challenges[challengeNo]
         if(grade === undefined) {
           const { reviewsNeeded } = solution
           if (reviewsNeeded < 1) {
@@ -111,11 +111,11 @@ class Solutions extends React.PureComponent<PropTypes, StateTypes> {
       })
 
       const notSubmitted: INotSubmitted[] = challenges
-        .reduce((acc, challengeName, challengeNo) => {
-          if (submittedNo.indexOf(challengeNo) === -1) {
+        .reduce((acc, challengeName, challengeId) => {
+          if (submittedNo.indexOf(challengeId) === -1) {
             return [...acc, {
               challengeName,
-              challengeNo
+              challengeNo: challengeId + 1
             }]
           }
           return acc
