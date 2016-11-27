@@ -13,7 +13,7 @@
   "name": "grademygorithm",
   "version": "1.0.0",
   "author": "marzelin <marzelin@gmail.com>",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "devDependencies": {
     "@types/chai": "^3.4.34",
     "@types/chai-as-promised": "^0.0.29",
